@@ -3,15 +3,16 @@
   var fs = require("fs");
   var cpgenerator = require("./childprocess-generator").cp;
 
-  const serverfile = "./server.js"
+
+  const serverfile = "./././././server.js"
   var server = cpgenerator.generateHttpProcess(serverfile);
-  console.log('Server started');
-  
+
   fs.watchFile('server.js',function(event,filename){
      
        // server.kill("SIGHUP");
         console.log('server stopped');
-        server.kill();
+        server.stdin.pause();
+        server.kill();//kill have problem when using child_process.execFile
         server = cpgenerator.generateHttpProcess(serverfile);
         console.log('server restarted');
   }); 

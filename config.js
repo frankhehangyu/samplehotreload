@@ -8,4 +8,5 @@ module.exports = {
     validResponseStatus:404,
     defaultPersistSolution:"file",
     saveFilePath: __dirname+"/url.dat",
+    startServerType:"spawn"
 }

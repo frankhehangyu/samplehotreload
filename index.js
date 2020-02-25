@@ -11,7 +11,7 @@
      
        // server.kill("SIGHUP");
         console.log('server stopped');
-        server.stdin.pause();
+        //server.stdin.pause();
         server.kill();//kill have problem when using child_process.execFile
         server = cpgenerator.generateHttpProcess(serverfile);
         console.log('server restarted');
